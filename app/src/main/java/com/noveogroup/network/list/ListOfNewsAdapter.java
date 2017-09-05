@@ -1,4 +1,4 @@
-package com.noveogroup.network.adapter;
+package com.noveogroup.network.list;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -45,6 +45,7 @@ public class ListOfNewsAdapter extends RecyclerView.Adapter<ListOfNewsAdapter.Vi
                 .error(R.drawable.no_image)
                 .placeholder(R.drawable.no_image_yet)
                 .into(holder.imageView);
+
     }
 
     @Override

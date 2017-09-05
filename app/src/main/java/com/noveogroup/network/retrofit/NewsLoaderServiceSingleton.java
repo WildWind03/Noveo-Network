@@ -1,6 +1,7 @@
-package com.noveogroup.network.tasks;
+package com.noveogroup.network.retrofit;
 
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NewsLoaderServiceSingleton {
@@ -13,6 +14,7 @@ public class NewsLoaderServiceSingleton {
             Retrofit builder = new Retrofit.Builder()
                     .baseUrl(DEFAULT_SITE)
                     .addConverterFactory(GsonConverterFactory.create())
+                    .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                     .build();
 
             instance = builder.create(NewsLoaderService.class);
